@@ -267,8 +267,13 @@ namespace BlockChain
                     
                     temp = str.ToString() + i.ToString();
                     t1byte = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(temp));
-                    //string result = System.Convert.ToBase64String(t1byte);
+                    StringBuilder builder1 = new StringBuilder();
+                    for (int z = 0; z < bytes.Length; z++)
+                    {
+                        builder1.Append(t1byte[z].ToString("x2"));
+                    }
                     
+
                     if (flag||i==((uint)uint.MaxValue - 1))
                     {
                         
@@ -282,7 +287,8 @@ namespace BlockChain
                     //else if(t1byte[0] < 15)
                     //else if(t1byte[diffi] < Math.Pow(15,(diffi+1))) //Önemli!
 
-                    else if (BitConverter.ToString(t1byte).StartsWith(search))
+                    //else if (BitConverter.ToString(t1byte).StartsWith(search))
+                    else if (builder1.ToString().StartsWith(search))
                     {
 
                        

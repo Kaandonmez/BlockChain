@@ -29,6 +29,7 @@ namespace BlockChain
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.data_txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.work2_rt_txt = new System.Windows.Forms.TextBox();
@@ -81,6 +82,13 @@ namespace BlockChain
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.listView3 = new System.Windows.Forms.ListView();
+            this.blok_no = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.nonce_value = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.total_found_time = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.list_hash = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -645,13 +653,64 @@ namespace BlockChain
             this.button2.Text = "Continue";
             this.button2.UseVisualStyleBackColor = false;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // listView3
+            // 
+            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.blok_no,
+            this.nonce_value,
+            this.total_found_time,
+            this.list_hash});
+            this.listView3.HideSelection = false;
+            this.listView3.Location = new System.Drawing.Point(784, 25);
+            this.listView3.Name = "listView3";
+            this.listView3.Size = new System.Drawing.Size(356, 174);
+            this.listView3.TabIndex = 25;
+            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.listView3.View = System.Windows.Forms.View.Details;
+            // 
+            // blok_no
+            // 
+            this.blok_no.Text = "Block No";
+            this.blok_no.Width = 57;
+            // 
+            // nonce_value
+            // 
+            this.nonce_value.Text = "Nonce";
+            this.nonce_value.Width = 44;
+            // 
+            // total_found_time
+            // 
+            this.total_found_time.Text = "Total Elapsed Time";
+            this.total_found_time.Width = 105;
+            // 
+            // list_hash
+            // 
+            this.list_hash.Text = "Hash";
+            this.list_hash.Width = 150;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(785, 9);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(64, 13);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Block Table";
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(793, 446);
+            this.ClientSize = new System.Drawing.Size(1152, 446);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.listView3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.linkLabel2);
@@ -746,6 +805,13 @@ namespace BlockChain
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         public System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.ColumnHeader blok_no;
+        private System.Windows.Forms.ColumnHeader nonce_value;
+        private System.Windows.Forms.ColumnHeader total_found_time;
+        private System.Windows.Forms.ColumnHeader list_hash;
+        private System.Windows.Forms.Label label10;
     }
 }
 
