@@ -199,7 +199,7 @@ namespace BlockChain
             // 
             // calculate_btn
             // 
-            this.calculate_btn.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.calculate_btn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.calculate_btn.Enabled = false;
             this.calculate_btn.Location = new System.Drawing.Point(9, 91);
             this.calculate_btn.Name = "calculate_btn";

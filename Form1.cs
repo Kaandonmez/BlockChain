@@ -172,6 +172,7 @@ namespace BlockChain
             calculate_btn.Enabled = false;
             radioButton1.Enabled = false;
             radioButton2.Enabled = false;
+            main1_thread_1.Enabled = false;
             main1_thread_2.Enabled = false;
             main1_thread_3.Enabled = false;
             main1_thread_4.Enabled = false;
@@ -190,6 +191,7 @@ namespace BlockChain
             calculate_btn.Enabled = true;
             radioButton1.Enabled = true;
             radioButton2.Enabled = true;
+            main1_thread_1.Enabled = true;
             main1_thread_2.Enabled = true;
             main1_thread_3.Enabled = true;
             main1_thread_4.Enabled = true;
@@ -2373,8 +2375,8 @@ namespace BlockChain
                             Thread worker1 = new Thread(thread1);
                             worker1.Start(rawData);
                             Thread.Sleep(50);
-                            start_pos_1 = start_pos_1 + (uint.MaxValue/2) / (uint)main1_thread_no;
-                            Thread.Sleep(50);
+                            start_pos_1 += (uint.MaxValue/2) / (uint)main1_thread_no;
+                            
                             Thread worker11 = new Thread(thread1);
                             worker11.Start(rawData);
                             worker1.Join();
@@ -2384,13 +2386,185 @@ namespace BlockChain
                             Thread worker14 = new Thread(thread1);
                             worker14.Start(rawData);
                             Thread.Sleep(50);
-                            start_pos_1 = start_pos_1 + (uint.MaxValue / 2) / (uint)main1_thread_no;
-                            Thread.Sleep(50);
+                            start_pos_1 += (uint.MaxValue / 2) / (uint)main1_thread_no;
+                            
                             Thread worker15 = new Thread(thread1);
                             worker15.Start(rawData);
-                            //Thread worker 16 =  new Thread()
+                            Thread.Sleep(50);
+                            start_pos_1 += (uint.MaxValue / 2) / (uint)main1_thread_no;
+
+                            Thread worker16 = new Thread(thread1);
+                            worker16.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_1 += (uint.MaxValue / 2) / (uint)main1_thread_no;
+
+                            Thread worker17 = new Thread(thread1);
+                            worker17.Start(rawData);
+
+
+
                             worker14.Join();
                             worker15.Join();
+                            worker16.Join();
+                            worker17.Join();
+                            break;
+
+                        case 8:
+                            Thread worker80 = new Thread(thread1);
+                            worker80.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_1 += (uint.MaxValue / 2) / (uint)main1_thread_no;
+
+                            Thread worker81 = new Thread(thread1);
+                            worker81.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_1 += (uint.MaxValue / 2) / (uint)main1_thread_no;
+
+                            Thread worker82 = new Thread(thread1);
+                            worker82.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_1 += (uint.MaxValue / 2) / (uint)main1_thread_no;
+
+                            Thread worker83 = new Thread(thread1);
+                            worker83.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_1 += (uint.MaxValue / 2) / (uint)main1_thread_no;
+
+                            Thread worker84 = new Thread(thread1);
+                            worker84.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_1 += (uint.MaxValue / 2) / (uint)main1_thread_no;
+
+                            Thread worker85 = new Thread(thread1);
+                            worker85.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_1 += (uint.MaxValue / 2) / (uint)main1_thread_no;
+
+                            Thread worker86 = new Thread(thread1);
+                            worker86.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_1 += (uint.MaxValue / 2) / (uint)main1_thread_no;
+
+                            Thread worker87 = new Thread(thread1);
+                            worker87.Start(rawData);
+
+
+                            worker80.Join();
+                            worker81.Join();
+                            worker81.Join();
+                            worker82.Join();
+                            worker83.Join();
+                            worker84.Join();
+                            worker85.Join();
+                            worker86.Join();
+                            worker87.Join();
+                            
+
+
+
+
+                            break;
+
+                        case 16:
+                            Thread worker160 = new Thread(thread1);
+                            worker160.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_1 += (uint.MaxValue / 2) / (uint)main1_thread_no;
+
+                            Thread worker161 = new Thread(thread1);
+                            worker161.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_1 += (uint.MaxValue / 2) / (uint)main1_thread_no;
+
+                            Thread worker162 = new Thread(thread1);
+                            worker162.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_1 += (uint.MaxValue / 2) / (uint)main1_thread_no;
+
+                            Thread worker163 = new Thread(thread1);
+                            worker163.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_1 += (uint.MaxValue / 2) / (uint)main1_thread_no;
+
+                            Thread worker164 = new Thread(thread1);
+                            worker164.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_1 += (uint.MaxValue / 2) / (uint)main1_thread_no;
+
+                            Thread worker165 = new Thread(thread1);
+                            worker165.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_1 += (uint.MaxValue / 2) / (uint)main1_thread_no;
+
+                            Thread worker166 = new Thread(thread1);
+                            worker166.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_1 += (uint.MaxValue / 2) / (uint)main1_thread_no;
+
+                            Thread worker167 = new Thread(thread1);
+                            worker167.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_1 += (uint.MaxValue / 2) / (uint)main1_thread_no;
+
+                            Thread worker168 = new Thread(thread1);
+                            worker168.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_1 += (uint.MaxValue / 2) / (uint)main1_thread_no;
+
+                            Thread worker169 = new Thread(thread1);
+                            worker169.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_1 += (uint.MaxValue / 2) / (uint)main1_thread_no;
+
+                            Thread worker170 = new Thread(thread1);
+                            worker170.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_1 += (uint.MaxValue / 2) / (uint)main1_thread_no;
+
+                            Thread worker172 = new Thread(thread1);
+                            worker172.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_1 += (uint.MaxValue / 2) / (uint)main1_thread_no;
+
+                            Thread worker173 = new Thread(thread1);
+                            worker173.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_1 += (uint.MaxValue / 2) / (uint)main1_thread_no;
+
+                            Thread worker174 = new Thread(thread1);
+                            worker174.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_1 += (uint.MaxValue / 2) / (uint)main1_thread_no;
+
+                            Thread worker171 = new Thread(thread1);
+                            worker171.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_1 += (uint.MaxValue / 2) / (uint)main1_thread_no;
+
+                            Thread worker175 = new Thread(thread1);
+                            worker175.Start(rawData);
+
+                            worker160.Join();
+                            worker161.Join();
+                            worker162.Join();
+                            worker163.Join();
+                            worker164.Join();
+                            worker165.Join();
+                            worker166.Join();
+                            worker167.Join();
+                            worker168.Join();
+                            worker169.Join();
+                            worker170.Join();
+                            worker171.Join();
+                            worker172.Join();
+                            worker173.Join();
+                            worker174.Join();
+                            worker175.Join();
+
+
+
+
+
                             break;
 
 
@@ -2405,12 +2579,199 @@ namespace BlockChain
                             worker2.Start(rawData);
                             Thread.Sleep(50);
                             start_pos_2 = start_pos_2 + (uint.MaxValue / 2) / (uint)main2_thread_no;
+                            
+                            Thread worker222 = new Thread(thread2);
+                            worker222.Start(rawData);
+                            worker2.Join();
+                            worker222.Join();
+                            break;
+                        case 4:
+                            Thread worker20 = new Thread(thread2);
+                            worker20.Start(rawData);
                             Thread.Sleep(50);
+                            start_pos_2 += (uint.MaxValue / 2) / (uint)main2_thread_no;
+
+                            Thread worker21 = new Thread(thread2);
+                            worker21.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_2 += (uint.MaxValue / 2) / (uint)main2_thread_no;
+
                             Thread worker22 = new Thread(thread2);
                             worker22.Start(rawData);
-                            worker2.Join();
+                            Thread.Sleep(50);
+                            start_pos_2 += (uint.MaxValue / 2) / (uint)main2_thread_no;
+
+                            Thread worker23 = new Thread(thread2);
+                            worker23.Start(rawData);
+
+
+
+                            worker20.Join();
+                            worker21.Join();
                             worker22.Join();
+                            worker23.Join();
                             break;
+
+                        case 8:
+                            Thread worker90 = new Thread(thread2);
+                            worker90.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_2 += (uint.MaxValue / 2) / (uint)main2_thread_no;
+
+                            Thread worker91 = new Thread(thread2);
+                            worker91.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_2 += (uint.MaxValue / 2) / (uint)main2_thread_no;
+
+                            Thread worker92 = new Thread(thread2);
+                            worker92.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_2 += (uint.MaxValue / 2) / (uint)main2_thread_no;
+
+                            Thread worker93 = new Thread(thread2);
+                            worker93.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_2 += (uint.MaxValue / 2) / (uint)main2_thread_no;
+
+                            Thread worker94 = new Thread(thread2);
+                            worker94.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_2 += (uint.MaxValue / 2) / (uint)main2_thread_no;
+
+                            Thread worker95 = new Thread(thread2);
+                            worker95.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_2 += (uint.MaxValue / 2) / (uint)main2_thread_no;
+
+                            Thread worker96 = new Thread(thread2);
+                            worker96.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_2 += (uint.MaxValue / 2) / (uint)main2_thread_no;
+
+                            Thread worker97 = new Thread(thread2);
+                            worker97.Start(rawData);
+
+
+                            worker90.Join();
+                            worker91.Join();
+                            worker91.Join();
+                            worker92.Join();
+                            worker93.Join();
+                            worker94.Join();
+                            worker95.Join();
+                            worker96.Join();
+                            worker97.Join();
+
+
+
+
+
+                            break;
+
+                        case 16:
+                            Thread worker260 = new Thread(thread2);
+                            worker260.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_2 += (uint.MaxValue / 2) / (uint)main2_thread_no;
+
+                            Thread worker261 = new Thread(thread2);
+                            worker261.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_2 += (uint.MaxValue / 2) / (uint)main2_thread_no;
+
+                            Thread worker262 = new Thread(thread2);
+                            worker262.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_2 += (uint.MaxValue / 2) / (uint)main2_thread_no;
+
+                            Thread worker263 = new Thread(thread2);
+                            worker263.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_2 += (uint.MaxValue / 2) / (uint)main2_thread_no;
+
+                            Thread worker264 = new Thread(thread2);
+                            worker264.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_2 += (uint.MaxValue / 2) / (uint)main2_thread_no;
+
+                            Thread worker265 = new Thread(thread2);
+                            worker265.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_2 += (uint.MaxValue / 2) / (uint)main2_thread_no;
+
+                            Thread worker266 = new Thread(thread2);
+                            worker266.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_2 += (uint.MaxValue / 2) / (uint)main2_thread_no;
+
+                            Thread worker267 = new Thread(thread2);
+                            worker267.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_2 += (uint.MaxValue / 2) / (uint)main2_thread_no;
+
+                            Thread worker268 = new Thread(thread2);
+                            worker268.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_2 += (uint.MaxValue / 2) / (uint)main2_thread_no;
+
+                            Thread worker269 = new Thread(thread2);
+                            worker269.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_2 += (uint.MaxValue / 2) / (uint)main2_thread_no;
+
+                            Thread worker270 = new Thread(thread2);
+                            worker270.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_2 += (uint.MaxValue / 2) / (uint)main2_thread_no;
+
+                            Thread worker272 = new Thread(thread2);
+                            worker272.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_2 += (uint.MaxValue / 2) / (uint)main2_thread_no;
+
+                            Thread worker273 = new Thread(thread2);
+                            worker273.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_2 += (uint.MaxValue / 2) / (uint)main2_thread_no;
+
+                            Thread worker274 = new Thread(thread2);
+                            worker274.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_2 += (uint.MaxValue / 2) / (uint)main2_thread_no;
+
+                            Thread worker271 = new Thread(thread2);
+                            worker271.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_2 += (uint.MaxValue / 2) / (uint)main2_thread_no;
+
+                            Thread worker275 = new Thread(thread2);
+                            worker275.Start(rawData);
+
+                            worker260.Join();
+                            worker261.Join();
+                            worker262.Join();
+                            worker263.Join();
+                            worker264.Join();
+                            worker265.Join();
+                            worker266.Join();
+                            worker267.Join();
+                            worker268.Join();
+                            worker269.Join();
+                            worker270.Join();
+                            worker271.Join();
+                            worker272.Join();
+                            worker273.Join();
+                            worker274.Join();
+                            worker275.Join();
+
+
+
+
+
+                            break;
+
+
+
                         default:
                             break;
                     }
@@ -2483,7 +2844,10 @@ namespace BlockChain
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (main1_thread_4.Checked)
+            {
+                main1_thread_no = 4;
+            }
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
