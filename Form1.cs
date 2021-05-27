@@ -50,7 +50,7 @@ namespace BlockChain
         //public static Stopwatch t15 = new Stopwatch();
         //public static Stopwatch t16 = new Stopwatch();
         public static List<Stopwatch> t = new List<Stopwatch>();
-        //public static List<Thread> core = new List<Thread>();
+        public static List<Thread> core = new List<Thread>(32);
         public static int main1_thread_no;
         public static int main2_thread_no;
         public static bool isSingle; // true = Single thread --- false = Multi thread
@@ -58,7 +58,7 @@ namespace BlockChain
         //public static uint total_posible = (uint) Math.Pow(2,32);
         public static Regex regex = new Regex(pattern);
         public static uint start_pos_1 = 0;
-        public static uint start_pos_2 = uint.MaxValue/2;
+        public static uint start_pos_2 = (uint)uint.MaxValue/2;
         public static uint iki_16 = (uint)Math.Pow(2, 16);
         public static uint iki_32 = (uint)Math.Pow(2, 32);
         public static string sha256;
@@ -97,7 +97,9 @@ namespace BlockChain
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
+            progressBar1.Style = ProgressBarStyle.Marquee;
+            devamet.Enabled = false;
             //Düğmeye basıldığı zaman eski verileri silmek gerekiyor!!!
             nonce_txt.Clear();              //
             hash_txt.Clear();               //
@@ -112,6 +114,8 @@ namespace BlockChain
             start_pos_1 = 0;
             //Düğmeye basıldığı zaman eski verileri silmek gerekiyor!!!
             //sonuc_hash.Add("12");
+            buttons_disabled();
+            
             main1_status_txt.Text = main1_thread_no.ToString();
             main2_status_txt.Text = main2_thread_no.ToString();
 
@@ -162,7 +166,41 @@ namespace BlockChain
         }
 
 
+        public void buttons_disabled()
+        {
+            data_txt.Enabled = false;
+            calculate_btn.Enabled = false;
+            radioButton1.Enabled = false;
+            radioButton2.Enabled = false;
+            main1_thread_2.Enabled = false;
+            main1_thread_3.Enabled = false;
+            main1_thread_4.Enabled = false;
+            main1_thread_8.Enabled = false;
+            main1_thread_16.Enabled = false;
+            main2_thread_2.Enabled = false;
+            main2_thread_3.Enabled = false;
+            main2_thread_4.Enabled = false;
+            main2_thread_8.Enabled = false;
+            main2_thread_16.Enabled = false;
+        }
 
+        public void buttons_enabled()
+        {
+            data_txt.Enabled = true;
+            calculate_btn.Enabled = true;
+            radioButton1.Enabled = true;
+            radioButton2.Enabled = true;
+            main1_thread_2.Enabled = true;
+            main1_thread_3.Enabled = true;
+            main1_thread_4.Enabled = true;
+            main1_thread_8.Enabled = true;
+            main1_thread_16.Enabled = true;
+            main2_thread_2.Enabled = true;
+            main2_thread_3.Enabled = true;
+            main2_thread_4.Enabled = true;
+            main2_thread_8.Enabled = true;
+            main2_thread_16.Enabled = true;
+        }
         public void Hesapla()
         {
             //sha256 = ComputeSha256Hash(deneme);
@@ -178,6 +216,7 @@ namespace BlockChain
             
             work1_rt_txt.Text = t[0].ElapsedMilliseconds.ToString();
             work2_rt_txt.Text = t[1].ElapsedMilliseconds.ToString();
+            total_rt_txt.Text = Math.Max(t[0].ElapsedMilliseconds, t[1].ElapsedMilliseconds).ToString();
             for (int a = 1; a < main1_thread_no + 1; a++)
             {
                 listView1.Items.Add(a.ToString());
@@ -188,10 +227,34 @@ namespace BlockChain
                 listView2.Items.Add(a.ToString());
                 listView2.Items[a - 1].SubItems.Add(t[a - 1].ElapsedMilliseconds.ToString());
             }
-            
-            diffi++;
-           
 
+            if (diffi !=0)
+            {
+                
+
+                block_table.Items.Add(new ListViewItem(new string[] { 
+                    (diffi).ToString(), 
+                    found_nonce.ToString(),
+                    Math.Max(t[0].ElapsedMilliseconds, t[1].ElapsedMilliseconds).ToString(), 
+                    sha256.ToString() }));
+
+            }
+            else
+            {
+
+                block_table.Items.Add(new ListViewItem(new string[] { 
+                    "Genesis Block", 
+                    found_nonce.ToString(),
+                    Math.Max(t[0].ElapsedMilliseconds, t[1].ElapsedMilliseconds).ToString(),
+                    sha256.ToString() }));
+            }
+            buttons_enabled();
+
+            //Math.Max(t[0].ElapsedMilliseconds, t[1].ElapsedMilliseconds);
+
+            diffi++;
+
+            progressBar1.Style = ProgressBarStyle.Continuous;
 
         }
         public static void reset_all_timers()
@@ -255,14 +318,24 @@ namespace BlockChain
                 //}
 
 
-
+                uint multi;
 
 
                 string search = String.Concat(Enumerable.Repeat("0", diffi + 1));
+                uint index1 = start_pos_1;
+
+                if (isSingle)
+                {
+                    multi = (uint)(uint.MaxValue);
+                }
+                else
+                {
+                    multi = (uint)(uint.MaxValue) / 2;
+                }
 
 
                 //for (uint i = start_pos_1; i< (start_pos_1 + Math.Pow(uint.MaxValue/*/2*/,1/main1_thread_no));i++)   
-                for (uint i = start_pos_1; i < (uint)uint.MaxValue; i++)
+                for (uint i = start_pos_1; i < index1 + multi/main1_thread_no; i++)
                 {
                     
                     temp = str.ToString() + i.ToString();
@@ -274,11 +347,11 @@ namespace BlockChain
                     }
                     
 
-                    if (flag||i==((uint)uint.MaxValue - 1))
+                    if (flag)
                     {
                         
                         //Console.WriteLine("Some Workerx found solution. Ending Task.(Worker1)");
-                        found_nonce = 88;
+                        //found_nonce = 88;
                         break;
                     }
 
@@ -337,40 +410,101 @@ namespace BlockChain
         public static void thread2(object str)
         {
 
+
             t[1].Start();
 
-            byte[] t2byte;
             string temp;
+
+            byte[] t1byte;
+
 
 
 
             using (SHA256 sha256Hash = SHA256.Create())
             {
-                if (main2_thread_no == 0)
-                {
-                    goto Go;
-                }
-                
+
+
                 string returnStr = "";
-                for (uint i = start_pos_2; i < (start_pos_2 + Math.Pow(iki_32, 1 / main2_thread_no));i++) 
+
+
+                //switch (main1_thread_no)
+                //{
+                //    case 2:
+                //        //Thread worker3 = new Thread(calculate);
+                //        //Thread worker4 = new Thread(calculate);
+                //        //worker3.Start(0);
+                //        //worker4.Start(Math.Pow(2, 16));
+                //        //worker3.Join();
+                //        //worker4.Join();
+                //        Thread worker3 = new Thread(thread3);
+                //        worker3.Start(str);
+                //        start_pos_1 = start_pos_1 + (uint)Math.Pow(iki_16, 1 / main1_thread_no);
+                //        worker3.Join();
+                //        break;
+                //    //case 3:
+                //    //    break;
+                //    //case 4:
+                //    //    break;
+                //    //case 8:
+                //    //    break;
+                //    //case 16:
+                //    //    break;
+                //    default:
+                //        break;
+                //}
+
+
+
+
+
+                string search = String.Concat(Enumerable.Repeat("0", diffi + 1));
+                uint index1 = start_pos_2;
+                if (!flag)
+              {
+
+                
+
+                //for (uint i = start_pos_1; i< (start_pos_1 + Math.Pow(uint.MaxValue/*/2*/,1/main1_thread_no));i++)   
+                for (uint i = start_pos_2; i < index1 + ((uint)(uint.MaxValue) / 2) / main2_thread_no; i++)
                 {
-                    temp = str.ToString() + i;
-                    t2byte = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(temp));
+
+                    temp = str.ToString() + i.ToString();
+                    t1byte = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(temp));
+                    StringBuilder builder1 = new StringBuilder();
+                    for (int z = 0; z < bytes.Length; z++)
+                    {
+                        builder1.Append(t1byte[z].ToString("x2"));
+                    }
+
+                    
                     if (flag)
                     {
-                        //Console.WriteLine("Some Workerx found solution. Ending Task.(Worker2)");
+
+                        //Console.WriteLine("Some Workerx found solution. Ending Task.(Worker1)");
+                        //found_nonce = 99;
                         break;
                     }
-                    else if (t2byte[0] < 15)
-                    //else if (regex.IsMatch(t2byte[0].ToString()))
+
+                    //else if (regex.IsMatch(t1byte[0].ToString()))
+                    //else if (Char.IsDigit(t1byte[0].ToString()))
+                    //else if(t1byte[0] < 15)
+                    //else if(t1byte[diffi] < Math.Pow(15,(diffi+1))) //Önemli!
+
+                    //else if (BitConverter.ToString(t1byte).StartsWith(search))
+                    else if (builder1.ToString().StartsWith(search))
                     {
+
+
 
 
                         found_nonce = i;
-                        //Console.WriteLine("Worker2 found the nonce... Nonce Value Found! =>> {0}", found_nonce);
+                        //Console.WriteLine("Worker1 found the nonce.. Nonce Value Found! =>> {0}", found_nonce);
+
                         flag = true;
                         bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(str.ToString() + found_nonce.ToString()));
                         returnStr = System.Convert.ToBase64String(bytes);
+                        //last_hash = diffi==0 ? (diffi+1).ToString() + str.ToString() + sha256 : (diffi).ToString()+str.ToString()+sha256  ;
+                        //last_hash = (diffi+2).ToString()+str.ToString()+sha256  ;
                         //Convert byte array to a string
                         StringBuilder builder = new StringBuilder();
                         for (int z = 0; z < bytes.Length; z++)
@@ -378,7 +512,9 @@ namespace BlockChain
                             builder.Append(bytes[z].ToString("x2"));
                         }
 
+                        //sonuc_hash[diffi] = diffi==0 ? "0000000000000000000000000000000000000000000000000000000000000000" : builder.ToString();
                         sonuc_hash[diffi] = builder.ToString();
+
                         break;
                     }
                     else
@@ -386,16 +522,18 @@ namespace BlockChain
                         continue;
                     }
                 }
-                
 
+            }
 
 
 
             }
-            Go:
+
+
             t[1].Stop();
-            //Console.WriteLine("Worker2 finish in {0} ms", t2.ElapsedMilliseconds);
-            //times[1] = t2.ElapsedMilliseconds;
+            //Console.WriteLine("Worker1 finish in {0} ms", t1.ElapsedMilliseconds);
+            //times[0] = t1.ElapsedMilliseconds;
+
 
         }
 
@@ -2220,30 +2358,78 @@ namespace BlockChain
 
 
 
-                //if (isSingle)
-                //{
-                //    Thread worker1 = new Thread(thread1);
-                //    worker1.Start(rawData);
-                //    worker1.Join();
-                //}
+                if (isSingle)
+                {
+                    Thread worker1 = new Thread(thread1);
+                    worker1.Start(rawData);
+                    worker1.Join();
+                }
 
-                //else
-                //{
-                //    Thread worker1 = new Thread(thread1);
-                //    Thread worker2 = new Thread(thread2);
-                //    worker1.Start(rawData);
-                //    worker2.Start(rawData);
-                //    worker1.Join();
-                //    worker2.Join();
-                //}
+                else
+                {
+                    switch (main1_thread_no)
+                    {
+                        case 2:
+                            Thread worker1 = new Thread(thread1);
+                            worker1.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_1 = start_pos_1 + (uint.MaxValue/2) / (uint)main1_thread_no;
+                            Thread.Sleep(50);
+                            Thread worker11 = new Thread(thread1);
+                            worker11.Start(rawData);
+                            worker1.Join();
+                            worker11.Join();
+                            break;
+                        case 4:
+                            Thread worker14 = new Thread(thread1);
+                            worker14.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_1 = start_pos_1 + (uint.MaxValue / 2) / (uint)main1_thread_no;
+                            Thread.Sleep(50);
+                            Thread worker15 = new Thread(thread1);
+                            worker15.Start(rawData);
+                            //Thread worker 16 =  new Thread()
+                            worker14.Join();
+                            worker15.Join();
+                            break;
 
 
-                Thread worker1 = new Thread(thread1);
+                        default:
+                            break;
+                    }
+                    Thread.Sleep(50);
+                    switch (main2_thread_no)
+                    {
+                        case 2:
+                            Thread worker2 = new Thread(thread2);
+                            worker2.Start(rawData);
+                            Thread.Sleep(50);
+                            start_pos_2 = start_pos_2 + (uint.MaxValue / 2) / (uint)main2_thread_no;
+                            Thread.Sleep(50);
+                            Thread worker22 = new Thread(thread2);
+                            worker22.Start(rawData);
+                            worker2.Join();
+                            worker22.Join();
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+
+               
                 //Thread worker2 = new Thread(thread2);
-                worker1.Start(rawData);
+               
                 //worker2.Start(rawData);
-                worker1.Join();
+                
                 //worker2.Join();
+
+
+
+
+                
+
+
 
 
 
@@ -2426,7 +2612,7 @@ namespace BlockChain
                 isSingle = true;
             }
             main1_thread_no = 1;
-            calculate_btn.Enabled = true;
+            calculate_btn.Enabled = false;
 
             main2_thread_2.Enabled = false;
             main2_thread_3.Enabled = false;
@@ -2440,6 +2626,7 @@ namespace BlockChain
             main2_thread_8.Checked = false;
             main2_thread_16.Checked = false;
 
+            main1_thread_1.Checked = false;
             main1_thread_2.Checked = false;
             main1_thread_3.Checked = false;
             main1_thread_4.Checked = false;
@@ -2507,6 +2694,20 @@ namespace BlockChain
         private void progressBar1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void main1_thread_1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (main1_thread_1.Checked)
+            {
+                calculate_btn.Enabled = true;
+                main1_thread_no = 1;
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            devamet.Enabled = true;
         }
     }
 }

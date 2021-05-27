@@ -78,17 +78,16 @@ namespace BlockChain
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label9 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.devamet = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.listView3 = new System.Windows.Forms.ListView();
+            this.block_table = new System.Windows.Forms.ListView();
             this.blok_no = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.nonce_value = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.total_found_time = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.list_hash = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label10 = new System.Windows.Forms.Label();
+            this.main1_thread_1 = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -455,14 +454,15 @@ namespace BlockChain
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.main1_thread_1);
             this.groupBox5.Controls.Add(this.main1_thread_16);
             this.groupBox5.Controls.Add(this.main1_thread_8);
             this.groupBox5.Controls.Add(this.main1_thread_4);
             this.groupBox5.Controls.Add(this.main1_thread_3);
             this.groupBox5.Controls.Add(this.main1_thread_2);
-            this.groupBox5.Location = new System.Drawing.Point(189, 26);
+            this.groupBox5.Location = new System.Drawing.Point(189, 5);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(92, 153);
+            this.groupBox5.Size = new System.Drawing.Size(92, 174);
             this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Thread Count";
@@ -471,7 +471,7 @@ namespace BlockChain
             // 
             this.main1_thread_16.AutoSize = true;
             this.main1_thread_16.ForeColor = System.Drawing.Color.Purple;
-            this.main1_thread_16.Location = new System.Drawing.Point(7, 129);
+            this.main1_thread_16.Location = new System.Drawing.Point(6, 150);
             this.main1_thread_16.Name = "main1_thread_16";
             this.main1_thread_16.Size = new System.Drawing.Size(74, 17);
             this.main1_thread_16.TabIndex = 4;
@@ -483,7 +483,7 @@ namespace BlockChain
             // 
             this.main1_thread_8.AutoSize = true;
             this.main1_thread_8.ForeColor = System.Drawing.Color.Red;
-            this.main1_thread_8.Location = new System.Drawing.Point(7, 102);
+            this.main1_thread_8.Location = new System.Drawing.Point(6, 123);
             this.main1_thread_8.Name = "main1_thread_8";
             this.main1_thread_8.Size = new System.Drawing.Size(68, 17);
             this.main1_thread_8.TabIndex = 3;
@@ -495,7 +495,7 @@ namespace BlockChain
             // 
             this.main1_thread_4.AutoSize = true;
             this.main1_thread_4.ForeColor = System.Drawing.Color.Yellow;
-            this.main1_thread_4.Location = new System.Drawing.Point(7, 75);
+            this.main1_thread_4.Location = new System.Drawing.Point(6, 96);
             this.main1_thread_4.Name = "main1_thread_4";
             this.main1_thread_4.Size = new System.Drawing.Size(68, 17);
             this.main1_thread_4.TabIndex = 2;
@@ -506,7 +506,7 @@ namespace BlockChain
             // main1_thread_3
             // 
             this.main1_thread_3.AutoSize = true;
-            this.main1_thread_3.Location = new System.Drawing.Point(7, 48);
+            this.main1_thread_3.Location = new System.Drawing.Point(6, 69);
             this.main1_thread_3.Name = "main1_thread_3";
             this.main1_thread_3.Size = new System.Drawing.Size(68, 17);
             this.main1_thread_3.TabIndex = 1;
@@ -518,7 +518,7 @@ namespace BlockChain
             // 
             this.main1_thread_2.AutoSize = true;
             this.main1_thread_2.ForeColor = System.Drawing.Color.ForestGreen;
-            this.main1_thread_2.Location = new System.Drawing.Point(7, 21);
+            this.main1_thread_2.Location = new System.Drawing.Point(6, 42);
             this.main1_thread_2.Name = "main1_thread_2";
             this.main1_thread_2.Size = new System.Drawing.Size(68, 17);
             this.main1_thread_2.TabIndex = 0;
@@ -594,9 +594,10 @@ namespace BlockChain
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(331, 176);
+            this.progressBar1.Location = new System.Drawing.Point(334, 114);
+            this.progressBar1.MarqueeAnimationSpeed = 15;
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(447, 23);
+            this.progressBar1.Size = new System.Drawing.Size(444, 23);
             this.progressBar1.TabIndex = 17;
             this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
             // 
@@ -605,33 +606,11 @@ namespace BlockChain
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label9.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label9.Location = new System.Drawing.Point(492, 153);
+            this.label9.Location = new System.Drawing.Point(523, 91);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(125, 20);
+            this.label9.Size = new System.Drawing.Size(80, 20);
             this.label9.TabIndex = 18;
-            this.label9.Text = "Total Progress";
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel1.Location = new System.Drawing.Point(334, 125);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(207, 13);
-            this.linkLabel1.TabIndex = 19;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Because we don\'t know the nonce value, ";
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel2.Location = new System.Drawing.Point(334, 140);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(292, 13);
-            this.linkLabel2.TabIndex = 20;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "the \"Total Progress\" bar could be missleading in most cases.";
+            this.label9.Text = "Progress";
             // 
             // button1
             // 
@@ -642,56 +621,61 @@ namespace BlockChain
             this.button1.TabIndex = 21;
             this.button1.Text = "Stop!";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // button2
+            // devamet
             // 
-            this.button2.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.button2.Location = new System.Drawing.Point(9, 158);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(92, 41);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Continue";
-            this.button2.UseVisualStyleBackColor = false;
+            this.devamet.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.devamet.Location = new System.Drawing.Point(9, 158);
+            this.devamet.Name = "devamet";
+            this.devamet.Size = new System.Drawing.Size(92, 41);
+            this.devamet.TabIndex = 22;
+            this.devamet.Text = "Continue";
+            this.devamet.UseVisualStyleBackColor = false;
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // listView3
+            // block_table
             // 
-            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.block_table.BackColor = System.Drawing.SystemColors.Window;
+            this.block_table.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.blok_no,
             this.nonce_value,
             this.total_found_time,
             this.list_hash});
-            this.listView3.HideSelection = false;
-            this.listView3.Location = new System.Drawing.Point(784, 25);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(356, 174);
-            this.listView3.TabIndex = 25;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            this.listView3.View = System.Windows.Forms.View.Details;
+            this.block_table.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.block_table.FullRowSelect = true;
+            this.block_table.GridLines = true;
+            this.block_table.HideSelection = false;
+            this.block_table.Location = new System.Drawing.Point(788, 25);
+            this.block_table.Name = "block_table";
+            this.block_table.Size = new System.Drawing.Size(356, 174);
+            this.block_table.TabIndex = 25;
+            this.block_table.UseCompatibleStateImageBehavior = false;
+            this.block_table.View = System.Windows.Forms.View.Details;
             // 
             // blok_no
             // 
             this.blok_no.Text = "Block No";
-            this.blok_no.Width = 57;
+            this.blok_no.Width = 63;
             // 
             // nonce_value
             // 
             this.nonce_value.Text = "Nonce";
-            this.nonce_value.Width = 44;
+            this.nonce_value.Width = 49;
             // 
             // total_found_time
             // 
             this.total_found_time.Text = "Total Elapsed Time";
-            this.total_found_time.Width = 105;
+            this.total_found_time.Width = 86;
             // 
             // list_hash
             // 
             this.list_hash.Text = "Hash";
-            this.list_hash.Width = 150;
+            this.list_hash.Width = 400;
             // 
             // label10
             // 
@@ -702,6 +686,19 @@ namespace BlockChain
             this.label10.TabIndex = 26;
             this.label10.Text = "Block Table";
             // 
+            // main1_thread_1
+            // 
+            this.main1_thread_1.AutoSize = true;
+            this.main1_thread_1.ForeColor = System.Drawing.Color.DarkOrange;
+            this.main1_thread_1.Location = new System.Drawing.Point(6, 16);
+            this.main1_thread_1.Name = "main1_thread_1";
+            this.main1_thread_1.Size = new System.Drawing.Size(68, 17);
+            this.main1_thread_1.TabIndex = 5;
+            this.main1_thread_1.TabStop = true;
+            this.main1_thread_1.Text = "1 Thread";
+            this.main1_thread_1.UseVisualStyleBackColor = true;
+            this.main1_thread_1.CheckedChanged += new System.EventHandler(this.main1_thread_1_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -710,11 +707,9 @@ namespace BlockChain
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1152, 446);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.listView3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.block_table);
+            this.Controls.Add(this.devamet);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.linkLabel2);
-            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.groupBox7);
@@ -797,21 +792,20 @@ namespace BlockChain
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button devamet;
         public System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.ListView block_table;
         private System.Windows.Forms.ColumnHeader blok_no;
         private System.Windows.Forms.ColumnHeader nonce_value;
         private System.Windows.Forms.ColumnHeader total_found_time;
         private System.Windows.Forms.ColumnHeader list_hash;
         private System.Windows.Forms.Label label10;
+        public System.Windows.Forms.RadioButton main1_thread_1;
     }
 }
 
