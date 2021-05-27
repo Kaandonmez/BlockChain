@@ -267,10 +267,9 @@ namespace BlockChain
                     
                     temp = str.ToString() + i.ToString();
                     t1byte = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(temp));
-                    ///t1byte;
                     //string result = System.Convert.ToBase64String(t1byte);
                     
-                    if (flag||i==(uint.MaxValue - 1))
+                    if (flag||i==((uint)uint.MaxValue - 1))
                     {
                         
                         //Console.WriteLine("Some Workerx found solution. Ending Task.(Worker1)");
