@@ -70,6 +70,11 @@ namespace BlockChain
             {
                 t.Add(new Stopwatch());
             }
+            MessageBox.Show("  1- Öncelikle uygulama single thread veya multi thread seçimini" +
+                " ardından uygun bölümlerdeki \"TÜM\" threadleri seçerek FOUND NONCE VALUE butonuna basınız.\n\n " +
+                " 2- Uygulama otomatik olarak nonce bulmaz. Her nonce değerinden sonra yeniden başlatmak gereklidir.\n\n " +
+                " 3- Ölçülen sürelere Thread oluşturma süreleri dahil değildir! \n\n" +
+                " 4- Eğer uygulamayı nonce değerini bulmadan kapatırsanız arkada çalışmaya devam eder. Bu yüzden görev yöneticisinden uygulamayı sonlandırmak gereklidir!");
 
             
 
