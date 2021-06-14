@@ -99,7 +99,7 @@ namespace BlockChain
         {
 
             progressBar1.Style = ProgressBarStyle.Marquee;
-            devamet.Enabled = false;
+            //devamet.Enabled = false;
             //Düğmeye basıldığı zaman eski verileri silmek gerekiyor!!!
             nonce_txt.Clear();              //
             hash_txt.Clear();               //
@@ -3071,7 +3071,7 @@ namespace BlockChain
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            devamet.Enabled = true;
+            //devamet.Enabled = true;
         }
     }
 }
