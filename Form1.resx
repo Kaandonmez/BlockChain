@@ -120,4 +120,26 @@
   <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="linkLabel5.Text" xml:space="preserve">
+    <value>- Program tüm threadler arasında bulunan ilk nonce değerini
+   bulunmuş nonce olarak belirliyor. Bu yüzden farklı thread
+   sayılarında farklı nonce bulunuyor. Nonce araması lineer
+   olarak çalışmıyor.
+
+</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Program UINT değerinin max değeri olan 4.2 milyar sayıya kadar
+arama yapabiliyor. 4.2 milyar sayı eğer multi-thread olarak bulunacaksa
+2.1 milyar olarak "2 ana thread'e bölünüyor". Bu threadler main1 ve main2
+olarak isimlendirildi. Alt Threadlere bölme işlemi main1 ve main2 altında
+gerçekleşiyor. Ayrıca her nonce bulunduğunda program durur ve değerleri
+gösterir. Otomatik olarak yeni nonce değerini aramaz.</value>
+  </data>
+  <data name="linkLabel6.Text" xml:space="preserve">
+    <value>- Find Nonce Value Butonu single veya multi thread seçimi yapmadan + 
+   single seçildi ise main1 içindeki 1 thread seçilmeden yada multi thread
+   seçiminde hem main1 hem de main2 içinde kaç thread oluşturulacağı
+   seçilmeden aktif olmaz.</value>
+  </data>
 </root>

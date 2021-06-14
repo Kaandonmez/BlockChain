@@ -100,9 +100,9 @@ namespace BlockChain
             //Düğmeye basıldığı zaman eski verileri silmek gerekiyor!!!
             //sonuc_hash.Add("12");
             buttons_disabled();
-            
-            main1_status_txt.Text = main1_thread_no.ToString();
-            main2_status_txt.Text = main2_thread_no.ToString();
+
+            main1_status_txt.Text = main1_thread_no.ToString() + " thread working...";
+            main2_status_txt.Text = main2_thread_no.ToString() + " thread working...";
 
             rawData = data_txt.Text;
             //main1_status_txt.Text = deneme.ToString();
@@ -159,12 +159,12 @@ namespace BlockChain
             radioButton2.Enabled = false;
             main1_thread_1.Enabled = false;
             main1_thread_2.Enabled = false;
-            main1_thread_3.Enabled = false;
+            //main1_thread_3.Enabled = false;
             main1_thread_4.Enabled = false;
             main1_thread_8.Enabled = false;
             main1_thread_16.Enabled = false;
             main2_thread_2.Enabled = false;
-            main2_thread_3.Enabled = false;
+            //main2_thread_3.Enabled = false;
             main2_thread_4.Enabled = false;
             main2_thread_8.Enabled = false;
             main2_thread_16.Enabled = false;
@@ -178,12 +178,12 @@ namespace BlockChain
             radioButton2.Enabled = true;
             main1_thread_1.Enabled = true;
             main1_thread_2.Enabled = true;
-            main1_thread_3.Enabled = true;
+            //main1_thread_3.Enabled = true;
             main1_thread_4.Enabled = true;
             main1_thread_8.Enabled = true;
             main1_thread_16.Enabled = true;
             main2_thread_2.Enabled = true;
-            main2_thread_3.Enabled = true;
+            //main2_thread_3.Enabled = true;
             main2_thread_4.Enabled = true;
             main2_thread_8.Enabled = true;
             main2_thread_16.Enabled = true;
@@ -1086,10 +1086,7 @@ namespace BlockChain
 
         private void main1_thread_3_CheckedChanged(object sender, EventArgs e)
         {
-            if (main1_thread_3.Checked)
-            {
-                main1_thread_no = 3;
-            }
+            
         }
 
         private void main1_thread_16_CheckedChanged(object sender, EventArgs e)
@@ -1129,11 +1126,7 @@ namespace BlockChain
 
         private void main3_thread_3_CheckedChanged(object sender, EventArgs e)
         {
-            if (main2_thread_3.Checked)
-            {
-                main2_thread_no = 3;
-                calculate_btn.Enabled = true;
-            }
+            
         }
 
         private void main3_thread_16_CheckedChanged(object sender, EventArgs e)
@@ -1161,26 +1154,26 @@ namespace BlockChain
             calculate_btn.Enabled = false;
 
             main2_thread_2.Enabled = false;
-            main2_thread_3.Enabled = false;
+            //main2_thread_3.Enabled = false;
             main2_thread_4.Enabled = false;
             main2_thread_8.Enabled = false;
             main2_thread_16.Enabled = false;
 
             main2_thread_2.Checked = false;
-            main2_thread_3.Checked = false;
+            //main2_thread_3.Checked = false;
             main2_thread_4.Checked = false;
             main2_thread_8.Checked = false;
             main2_thread_16.Checked = false;
 
             main1_thread_1.Checked = false;
             main1_thread_2.Checked = false;
-            main1_thread_3.Checked = false;
+            //main1_thread_3.Checked = false;
             main1_thread_4.Checked = false;
             main1_thread_8.Checked = false;
             main1_thread_16.Checked = false;
 
             main1_thread_2.Enabled = false;
-            main1_thread_3.Enabled = false;
+            //main1_thread_3.Enabled = false;
             main1_thread_4.Enabled = false;
             main1_thread_8.Enabled = false;
             main1_thread_16.Enabled = false;
@@ -1213,13 +1206,13 @@ namespace BlockChain
             }
 
             main1_thread_2.Enabled = true;
-            main1_thread_3.Enabled = true;
+            //main1_thread_3.Enabled = true;
             main1_thread_4.Enabled = true;
             main1_thread_8.Enabled = true;
             main1_thread_16.Enabled = true;
 
             main2_thread_2.Enabled = true;
-            main2_thread_3.Enabled = true;
+            //main2_thread_3.Enabled = true;
             main2_thread_4.Enabled = true;
             main2_thread_8.Enabled = true;
             main2_thread_16.Enabled = true;

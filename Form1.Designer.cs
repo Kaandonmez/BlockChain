@@ -30,6 +30,7 @@ namespace BlockChain
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.data_txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.work2_rt_txt = new System.Windows.Forms.TextBox();
@@ -56,7 +57,6 @@ namespace BlockChain
             this.main2_thread_16 = new System.Windows.Forms.RadioButton();
             this.main2_thread_8 = new System.Windows.Forms.RadioButton();
             this.main2_thread_4 = new System.Windows.Forms.RadioButton();
-            this.main2_thread_3 = new System.Windows.Forms.RadioButton();
             this.main2_thread_2 = new System.Windows.Forms.RadioButton();
             this.main2_status_txt = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -69,7 +69,6 @@ namespace BlockChain
             this.main1_thread_16 = new System.Windows.Forms.RadioButton();
             this.main1_thread_8 = new System.Windows.Forms.RadioButton();
             this.main1_thread_4 = new System.Windows.Forms.RadioButton();
-            this.main1_thread_3 = new System.Windows.Forms.RadioButton();
             this.main1_thread_2 = new System.Windows.Forms.RadioButton();
             this.main1_status_txt = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -87,6 +86,12 @@ namespace BlockChain
             this.label10 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -241,7 +246,7 @@ namespace BlockChain
             this.groupBox1.Controls.Add(this.nonce_txt);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(12, 205);
+            this.groupBox1.Location = new System.Drawing.Point(12, 243);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(143, 229);
             this.groupBox1.TabIndex = 13;
@@ -280,7 +285,7 @@ namespace BlockChain
             // 
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.groupBox3);
-            this.groupBox2.Location = new System.Drawing.Point(161, 205);
+            this.groupBox2.Location = new System.Drawing.Point(161, 243);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(617, 229);
             this.groupBox2.TabIndex = 14;
@@ -328,7 +333,6 @@ namespace BlockChain
             this.groupBox6.Controls.Add(this.main2_thread_16);
             this.groupBox6.Controls.Add(this.main2_thread_8);
             this.groupBox6.Controls.Add(this.main2_thread_4);
-            this.groupBox6.Controls.Add(this.main2_thread_3);
             this.groupBox6.Controls.Add(this.main2_thread_2);
             this.groupBox6.Location = new System.Drawing.Point(188, 26);
             this.groupBox6.Name = "groupBox6";
@@ -353,7 +357,7 @@ namespace BlockChain
             // 
             this.main2_thread_8.AutoSize = true;
             this.main2_thread_8.ForeColor = System.Drawing.Color.Red;
-            this.main2_thread_8.Location = new System.Drawing.Point(7, 102);
+            this.main2_thread_8.Location = new System.Drawing.Point(7, 93);
             this.main2_thread_8.Name = "main2_thread_8";
             this.main2_thread_8.Size = new System.Drawing.Size(68, 17);
             this.main2_thread_8.TabIndex = 3;
@@ -365,7 +369,7 @@ namespace BlockChain
             // 
             this.main2_thread_4.AutoSize = true;
             this.main2_thread_4.ForeColor = System.Drawing.Color.Yellow;
-            this.main2_thread_4.Location = new System.Drawing.Point(7, 75);
+            this.main2_thread_4.Location = new System.Drawing.Point(7, 57);
             this.main2_thread_4.Name = "main2_thread_4";
             this.main2_thread_4.Size = new System.Drawing.Size(68, 17);
             this.main2_thread_4.TabIndex = 2;
@@ -373,22 +377,11 @@ namespace BlockChain
             this.main2_thread_4.UseVisualStyleBackColor = true;
             this.main2_thread_4.CheckedChanged += new System.EventHandler(this.main3_thread_4_CheckedChanged);
             // 
-            // main2_thread_3
-            // 
-            this.main2_thread_3.AutoSize = true;
-            this.main2_thread_3.Location = new System.Drawing.Point(7, 48);
-            this.main2_thread_3.Name = "main2_thread_3";
-            this.main2_thread_3.Size = new System.Drawing.Size(68, 17);
-            this.main2_thread_3.TabIndex = 1;
-            this.main2_thread_3.Text = "3 Thread";
-            this.main2_thread_3.UseVisualStyleBackColor = true;
-            this.main2_thread_3.CheckedChanged += new System.EventHandler(this.main3_thread_3_CheckedChanged);
-            // 
             // main2_thread_2
             // 
             this.main2_thread_2.AutoSize = true;
             this.main2_thread_2.ForeColor = System.Drawing.Color.ForestGreen;
-            this.main2_thread_2.Location = new System.Drawing.Point(7, 21);
+            this.main2_thread_2.Location = new System.Drawing.Point(6, 21);
             this.main2_thread_2.Name = "main2_thread_2";
             this.main2_thread_2.Size = new System.Drawing.Size(68, 17);
             this.main2_thread_2.TabIndex = 0;
@@ -457,11 +450,10 @@ namespace BlockChain
             this.groupBox5.Controls.Add(this.main1_thread_16);
             this.groupBox5.Controls.Add(this.main1_thread_8);
             this.groupBox5.Controls.Add(this.main1_thread_4);
-            this.groupBox5.Controls.Add(this.main1_thread_3);
             this.groupBox5.Controls.Add(this.main1_thread_2);
-            this.groupBox5.Location = new System.Drawing.Point(189, 5);
+            this.groupBox5.Location = new System.Drawing.Point(189, 26);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(92, 174);
+            this.groupBox5.Size = new System.Drawing.Size(92, 153);
             this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Thread Count";
@@ -470,7 +462,7 @@ namespace BlockChain
             // 
             this.main1_thread_1.AutoSize = true;
             this.main1_thread_1.ForeColor = System.Drawing.Color.DarkOrange;
-            this.main1_thread_1.Location = new System.Drawing.Point(6, 16);
+            this.main1_thread_1.Location = new System.Drawing.Point(6, 21);
             this.main1_thread_1.Name = "main1_thread_1";
             this.main1_thread_1.Size = new System.Drawing.Size(68, 17);
             this.main1_thread_1.TabIndex = 5;
@@ -483,7 +475,7 @@ namespace BlockChain
             // 
             this.main1_thread_16.AutoSize = true;
             this.main1_thread_16.ForeColor = System.Drawing.Color.Purple;
-            this.main1_thread_16.Location = new System.Drawing.Point(6, 150);
+            this.main1_thread_16.Location = new System.Drawing.Point(6, 129);
             this.main1_thread_16.Name = "main1_thread_16";
             this.main1_thread_16.Size = new System.Drawing.Size(74, 17);
             this.main1_thread_16.TabIndex = 4;
@@ -495,7 +487,7 @@ namespace BlockChain
             // 
             this.main1_thread_8.AutoSize = true;
             this.main1_thread_8.ForeColor = System.Drawing.Color.Red;
-            this.main1_thread_8.Location = new System.Drawing.Point(6, 123);
+            this.main1_thread_8.Location = new System.Drawing.Point(6, 102);
             this.main1_thread_8.Name = "main1_thread_8";
             this.main1_thread_8.Size = new System.Drawing.Size(68, 17);
             this.main1_thread_8.TabIndex = 3;
@@ -507,7 +499,7 @@ namespace BlockChain
             // 
             this.main1_thread_4.AutoSize = true;
             this.main1_thread_4.ForeColor = System.Drawing.Color.Yellow;
-            this.main1_thread_4.Location = new System.Drawing.Point(6, 96);
+            this.main1_thread_4.Location = new System.Drawing.Point(6, 75);
             this.main1_thread_4.Name = "main1_thread_4";
             this.main1_thread_4.Size = new System.Drawing.Size(68, 17);
             this.main1_thread_4.TabIndex = 2;
@@ -515,22 +507,11 @@ namespace BlockChain
             this.main1_thread_4.UseVisualStyleBackColor = true;
             this.main1_thread_4.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
-            // main1_thread_3
-            // 
-            this.main1_thread_3.AutoSize = true;
-            this.main1_thread_3.Location = new System.Drawing.Point(6, 69);
-            this.main1_thread_3.Name = "main1_thread_3";
-            this.main1_thread_3.Size = new System.Drawing.Size(68, 17);
-            this.main1_thread_3.TabIndex = 1;
-            this.main1_thread_3.Text = "3 Thread";
-            this.main1_thread_3.UseVisualStyleBackColor = true;
-            this.main1_thread_3.CheckedChanged += new System.EventHandler(this.main1_thread_3_CheckedChanged);
-            // 
             // main1_thread_2
             // 
             this.main1_thread_2.AutoSize = true;
             this.main1_thread_2.ForeColor = System.Drawing.Color.ForestGreen;
-            this.main1_thread_2.Location = new System.Drawing.Point(6, 42);
+            this.main1_thread_2.Location = new System.Drawing.Point(6, 48);
             this.main1_thread_2.Name = "main1_thread_2";
             this.main1_thread_2.Size = new System.Drawing.Size(68, 17);
             this.main1_thread_2.TabIndex = 0;
@@ -668,7 +649,7 @@ namespace BlockChain
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(785, 421);
+            this.linkLabel1.Location = new System.Drawing.Point(782, 456);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(305, 13);
             this.linkLabel1.TabIndex = 27;
@@ -678,12 +659,81 @@ namespace BlockChain
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(788, 398);
+            this.linkLabel2.Location = new System.Drawing.Point(782, 436);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(147, 13);
             this.linkLabel2.TabIndex = 28;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Karadeniz Teknik Üniversitesi";
+            // 
+            // linkLabel3
+            // 
+            this.linkLabel3.AutoSize = true;
+            this.linkLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.linkLabel3.LinkColor = System.Drawing.Color.Red;
+            this.linkLabel3.Location = new System.Drawing.Point(785, 216);
+            this.linkLabel3.Name = "linkLabel3";
+            this.linkLabel3.Size = new System.Drawing.Size(117, 16);
+            this.linkLabel3.TabIndex = 29;
+            this.linkLabel3.TabStop = true;
+            this.linkLabel3.Text = "Bilinen Sorunlar";
+            // 
+            // linkLabel4
+            // 
+            this.linkLabel4.AutoSize = true;
+            this.linkLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.linkLabel4.LinkColor = System.Drawing.Color.Red;
+            this.linkLabel4.Location = new System.Drawing.Point(788, 242);
+            this.linkLabel4.Name = "linkLabel4";
+            this.linkLabel4.Size = new System.Drawing.Size(274, 30);
+            this.linkLabel4.TabIndex = 30;
+            this.linkLabel4.TabStop = true;
+            this.linkLabel4.Text = "- Main2 Runtime zamanı çalışmıyor/göstermiyor. \r\n   Ancak Main1 runtime süresi do" +
+    "ğru ölçülüyor.";
+            // 
+            // linkLabel5
+            // 
+            this.linkLabel5.AutoSize = true;
+            this.linkLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.linkLabel5.LinkColor = System.Drawing.Color.Red;
+            this.linkLabel5.Location = new System.Drawing.Point(788, 286);
+            this.linkLabel5.Name = "linkLabel5";
+            this.linkLabel5.Size = new System.Drawing.Size(337, 75);
+            this.linkLabel5.TabIndex = 31;
+            this.linkLabel5.TabStop = true;
+            this.linkLabel5.Text = resources.GetString("linkLabel5.Text");
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label14.Location = new System.Drawing.Point(335, 144);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(124, 13);
+            this.label14.TabIndex = 32;
+            this.label14.Text = "Bilinmesi gerekenler:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label15.Location = new System.Drawing.Point(335, 157);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(408, 90);
+            this.label15.TabIndex = 33;
+            this.label15.Text = resources.GetString("label15.Text");
+            // 
+            // linkLabel6
+            // 
+            this.linkLabel6.AutoSize = true;
+            this.linkLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.linkLabel6.LinkColor = System.Drawing.Color.Red;
+            this.linkLabel6.Location = new System.Drawing.Point(788, 355);
+            this.linkLabel6.Name = "linkLabel6";
+            this.linkLabel6.Size = new System.Drawing.Size(401, 60);
+            this.linkLabel6.TabIndex = 34;
+            this.linkLabel6.TabStop = true;
+            this.linkLabel6.Text = resources.GetString("linkLabel6.Text");
             // 
             // Form1
             // 
@@ -691,7 +741,13 @@ namespace BlockChain
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1152, 446);
+            this.ClientSize = new System.Drawing.Size(1152, 511);
+            this.Controls.Add(this.linkLabel6);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.linkLabel5);
+            this.Controls.Add(this.linkLabel4);
+            this.Controls.Add(this.linkLabel3);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label10);
@@ -760,7 +816,6 @@ namespace BlockChain
         private System.Windows.Forms.RadioButton main2_thread_16;
         private System.Windows.Forms.RadioButton main2_thread_8;
         private System.Windows.Forms.RadioButton main2_thread_4;
-        private System.Windows.Forms.RadioButton main2_thread_3;
         private System.Windows.Forms.RadioButton main2_thread_2;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader main1_thread_id;
@@ -768,7 +823,6 @@ namespace BlockChain
         public System.Windows.Forms.RadioButton main1_thread_16;
         public System.Windows.Forms.RadioButton main1_thread_8;
         public System.Windows.Forms.RadioButton main1_thread_4;
-        public System.Windows.Forms.RadioButton main1_thread_3;
         public System.Windows.Forms.RadioButton main1_thread_2;
         private System.Windows.Forms.ColumnHeader main2_thread_id;
         private System.Windows.Forms.ColumnHeader main2_thread_runtime;
@@ -790,6 +844,12 @@ namespace BlockChain
         public System.Windows.Forms.RadioButton main1_thread_1;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.LinkLabel linkLabel3;
+        private System.Windows.Forms.LinkLabel linkLabel4;
+        private System.Windows.Forms.LinkLabel linkLabel5;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.LinkLabel linkLabel6;
     }
 }
 
